@@ -13,6 +13,11 @@ class  Coordonnees extends Component
     coordonnees:{profil:"",nom_prenom:"",poste:"",date_naissance:"",telephone:"",adresse:"",email:"",linkedin:""},
     activeStep:1
   }
+  componentDidMount()
+  {
+    this.props.getActiveStep(this.state.activeStep);
+    this.props.addCoordonnees(this.state.coordonnees);
+  }
 
 handleNext = () => 
 {
@@ -36,46 +41,54 @@ handleChange = (e) => {
     return (
       <div className="container">
           <Stepper />
-          <form className="col-lg-12 row"  >
-            <div className="form-group col-6 ">
-              <input className="form-control" type="file" />
-            </div>
-            <div className="form-group col-12">
-              <label  className="form-label" htmlFor="profil">Profil</label>
-              <textarea name="profil" onChange={this.handleChange}  id="profil" className="form-control" ></textarea>
-            </div>
-            <div className="form-group col-6 ">                
-              <TextField  name="nom_prenom" onChange={this.handleChange} className="col-12" value={this.state.coordonnees.nom_prenom}  label="Nom et Prénom" variant="outlined" />                              
-            </div>
-            <div className="form-group col-6 ">
-              <label>Date de naissance</label>
-            <TextField type="date"  name="date_naissance" onChange={this.handleChange} className="col-12" value={this.state.coordonnees.date_naissance}  />
-            </div>
-            <div className="form-group col-6 ">
-              <TextField  name="poste" onChange={this.handleChange} className="col-12" value={this.state.coordonnees.poste} label="Poste occupé" variant="outlined" /> 
-            </div>
-            <h4 className="col-lg-12">Contact :</h4>
-            <div className="form-group col-6 ">
-                <TextField  name="telephone" onChange={this.handleChange} value={this.state.coordonnees.telephone} className="col-12" label="Telephone" variant="outlined" />
-            </div>
-            <div className="form-group col-6 ">
-                 <TextField  name="adresse" onChange={this.handleChange} value={this.state.coordonnees.adresse} className="col-12" label="Adresse" variant="outlined" />
-            </div>
-            <div className="form-group col-6 ">
-                 <TextField  name="email" onChange={this.handleChange} value={this.state.coordonnees.email} className="col-12" label="Email" variant="outlined" />
-            </div>
-            <div className="form-group col-6 ">
-                 <TextField  name="linkedin" onChange={this.handleChange} value={this.state.coordonnees.linkedin} className="col-12" label="LinkedIn" variant="outlined" />
-            </div>
-            <div className="row col-12">
-              <div className="form-group col-1" >
-                <button className="btn btn-primary"> Retour </button>              
+          <div className="main-content row">
+              <div className="col-9">
+                <form className="col-lg-12 row"  >
+                  <div className="form-group col-6 ">
+                    <input className="form-control" type="file" />
+                  </div>
+                  <div className="form-group col-12">
+                    <label  className="form-label" htmlFor="profil">Profil</label>
+                    <textarea name="profil" onChange={this.handleChange}  id="profil" className="form-control" ></textarea>
+                  </div>
+                  <div className="form-group col-6 ">                
+                    <TextField  name="nom_prenom" onChange={this.handleChange} className="col-12" value={this.state.coordonnees.nom_prenom}  label="Nom et Prénom" variant="outlined" />                              
+                  </div>
+                  <div className="form-group col-6 ">
+                    <label>Date de naissance</label>
+                  <TextField type="date"  name="date_naissance" onChange={this.handleChange} className="col-12" value={this.state.coordonnees.date_naissance}  />
+                  </div>
+                  <div className="form-group col-6 ">
+                    <TextField  name="poste" onChange={this.handleChange} className="col-12" value={this.state.coordonnees.poste} label="Poste occupé" variant="outlined" /> 
+                  </div>
+                  <h4 className="col-lg-12">Contact :</h4>
+                  <div className="form-group col-6 ">
+                      <TextField  name="telephone" onChange={this.handleChange} value={this.state.coordonnees.telephone} className="col-12" label="Telephone" variant="outlined" />
+                  </div>
+                  <div className="form-group col-6 ">
+                      <TextField  name="adresse" onChange={this.handleChange} value={this.state.coordonnees.adresse} className="col-12" label="Adresse" variant="outlined" />
+                  </div>
+                  <div className="form-group col-6 ">
+                      <TextField  name="email" onChange={this.handleChange} value={this.state.coordonnees.email} className="col-12" label="Email" variant="outlined" />
+                  </div>
+                  <div className="form-group col-6 ">
+                      <TextField  name="linkedin" onChange={this.handleChange} value={this.state.coordonnees.linkedin} className="col-12" label="LinkedIn" variant="outlined" />
+                  </div>
+                  <div className="row col-12">
+                    <div className="form-group col-1" >
+                      <button className="btn btn-primary"> Retour </button>              
+                    </div>
+                    <div className="form-group col-1" >
+                      <button type="button" className="btn btn-primary" onClick={this.handleNext}> Suivant</button>            
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div className="form-group col-1" >
-                <button type="button" className="btn btn-primary" onClick={this.handleNext}> Suivant</button>            
+              <div className="col-3">
+                  <img className="img-fluid" src="images/etape1.png" />
               </div>
-            </div>
-          </form>
+          </div>
+
          
       </div>
     )

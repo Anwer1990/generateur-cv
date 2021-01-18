@@ -64,7 +64,8 @@ import { connect } from 'react-redux';
         return (
             <div className="container">
                 <Stepper />
-               <div className="container col-8">
+              <div className="main-content row">
+               <div className=" col-9">
                 {this.state.competences.map((row, index)=>{return(            
                     <div className="row" key={`${row}-${index}`}>
                       <div className="from-group col-4">
@@ -115,17 +116,22 @@ import { connect } from 'react-redux';
                     )})}
                     <div className="add-btn-container">
                       <button type="button" className="btn btn-success" onClick={() => this.handleAdd()}>+</button>
-
                     </div>
+                <div className="col-3">
+                  <div className="row">
+                      <div className="form-group col-6" >
+                          <button type="button" onClick={this.handleBack} className="btn btn-primary"> Retour </button>              
+                      </div>
+                      <div className="form-group col-6" >
+                          <button type="button" className="btn btn-primary" onClick={this.handleNext}> Suivant</button>            
+                      </div>
+                  </div>
                 </div>
-                <div className="row col-2">
-                        <div className="form-group col-6" >
-                            <button type="button" onClick={this.handleBack} className="btn btn-primary"> Retour </button>              
-                        </div>
-                        <div className="form-group col-6" >
-                            <button type="button" className="btn btn-primary" onClick={this.handleNext}> Suivant</button>            
-                        </div>
-                        </div>
+                </div>                
+                <div className="col-3">
+                  <img className="img-fluid" src="images/etape4.png" />
+                </div>
+                </div>
             </div>
         )
     }
