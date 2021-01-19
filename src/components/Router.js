@@ -5,6 +5,7 @@ import {
   } from "react-router-dom";
   import BuildingCv from './BuildingCv';
   import HomePage from './HomePage';
+import Model1 from './models/Model1';
 import Apercu from './steps/Apercu';
 import Competences from './steps/Competences';
 import Coordonnees from './steps/Coordonnees';
@@ -18,6 +19,7 @@ function Router ()
     return(   
             <Switch>
                 <Route exact  path='/' component={HomePage} />
+                <Route path="/model1" component={Model1} />
                 <Route path="/models" component={Models} />                    
                 <Route path="/makeCV" component={BuildingCv} />
                 <Route path="/formations" component={Formations} />
