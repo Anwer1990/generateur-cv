@@ -32,28 +32,34 @@ export class Model1 extends Component {
                     </div>
                 </div>
                 <div className="bloc-mid">
-                    <div className="col-12">
+                    <div className="col-12 section">
                         <div className="row">
                             <div className="col-3 title-bloc-mid">A PROPOS DE MOI</div>
                             <div className="col-9">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</div>
                         </div>
                     </div>
-                    <div className="col-12">
+                    <div className="col-12 section">
                         <div className="row">
                             <div className="col-3 title-bloc-mid">FORMATION</div>
                             <div className="col-9">
                                 <div className="row">
                                     <div className="col-8 titre-formation">DIPLOME XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
-                                    <div className="col-4">20XX-20XX</div>
+                                    <div className="col-4 periode">20XX-20XX</div>
                                 </div>
-                                <div className="col-10">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</div>
+                                <div className="col-12">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-12">
+                    <div className="col-12 section">
                         <div className="row">
                             <div className="col-3 title-bloc-mid">EXPERIENCE</div>
-                            <div className="col-9">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</div>
+                            <div className="col-9">
+                                <div className="row">
+                                    <div className="col-8 titre-formation">Développeur web</div>
+                                    <div className="col-4 periode">Sept 20XX- Jan 20XX</div>
+                                </div>
+                                <div className="col-12">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
