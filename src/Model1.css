@@ -1,0 +1,45 @@
+.img-container
+{
+    text-align: center;
+}
+.nom-prenom
+{
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 3.2rem;
+}
+.poste-recherche
+{
+    color:#17b34a;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+.name-job
+{
+    padding-left: 22px;
+}
+.bloc-top
+{
+    margin-bottom: 40px;
+}
+.bloc-mid .col-12
+{
+    margin: 30px 0;
+}
+.title-bloc-mid
+{
+    color:#17b34a;
+    font-weight: 700;
+}
+.competences
+{
+    list-style: none;  
+}
+.competences li 
+{
+    margin: auto;
+}
+.progress-bar
+{
+    background-color:#17b34a;
+}
