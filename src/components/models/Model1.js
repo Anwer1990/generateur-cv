@@ -10,7 +10,7 @@ export class Model1 extends Component {
                 <div className="bloc-top">
                     <div className="row">
                         <div className="col-3 img-container">
-                        <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-380-456332.png" width="150" alt="avatar" />
+                        <img src="img_avatar.png" className="img-rounded" width="150" alt="avatar" />
                         </div>
                         <div className="col-9">
                             <div className="row">
