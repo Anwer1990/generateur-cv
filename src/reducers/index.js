@@ -1,4 +1,4 @@
-import { ACTIVE_STEP, ADD_COMPETENCES, ADD_COORDONNEES, ADD_EXPERIENCES, ADD_FORMATIONS } from "../actions/actions-types";
+import { ACTIVE_STEP, ADD_COMPETENCES, ADD_COORDONNEES, ADD_EXPERIENCES, ADD_FORMATIONS, CHOICEMODEL } from "../actions/actions-types";
 
 function rootReducer(state, action)
 {  
@@ -27,6 +27,11 @@ function rootReducer(state, action)
     {        
             state.activeStep=action.activeStep;
             return{...state}
+    }
+    if(action.type===CHOICEMODEL)
+    {
+        state.model=action.model;
+        return{...state}
     }
     return state;
 }

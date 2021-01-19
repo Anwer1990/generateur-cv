@@ -24,6 +24,7 @@ function loadState(){
       experiences:[],
       competences:[],
       activeStep:1,
+      model:""
     };
   }
 

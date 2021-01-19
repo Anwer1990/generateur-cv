@@ -1,4 +1,4 @@
-import { ADD_COORDONNEES,ADD_FORMATIONS, ACTIVE_STEP, ADD_EXPERIENCES } from "./actions-types"
+import { ADD_COORDONNEES,ADD_FORMATIONS, ACTIVE_STEP, ADD_EXPERIENCES, CHOICEMODEL } from "./actions-types"
 
 export function addCoordonnees(coordonnees)
 {
@@ -20,4 +20,8 @@ export function addCompetences(competences)
 export function getActiveStep(activeStep)
 {
     return{type:ACTIVE_STEP,activeStep:activeStep}
+}
+export function ChoiceCvModel(model)
+{
+    return{type:CHOICEMODEL,model:model}
 }

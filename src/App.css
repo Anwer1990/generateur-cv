@@ -111,3 +111,31 @@ nav.navbar
   padding: 30px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
 }
+.paper
+{
+  margin-top: 70px;
+}
+.modelBox
+{
+  max-height: 350px;
+  max-width: 16%;
+  margin: 10px;
+}
+.btnModelStart
+{
+  background-color: #222222;
+  color: #fff;
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  border: none;
+  padding: 20px;
+  border-radius: 0px 0px 10px 10px;
+}
+.btnModelStart:hover
+{
+  text-decoration: none;
+    color: #fff;
+    margin-top: -3px;
+    cursor: pointer;
+}

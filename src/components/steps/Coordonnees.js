@@ -40,16 +40,15 @@ handleChange = (e) => {
   {
     return (
       <div className="container">
-          <Stepper />
-          <div className="main-content row">
+          <Stepper />          
+          <div className="main-content row">              
               <div className="col-9">
                 <form className="col-lg-12 row"  >
                   <div className="form-group col-6 ">
                     <input className="form-control" type="file" />
                   </div>
                   <div className="form-group col-12">
-                    <label  className="form-label" htmlFor="profil">Profil</label>
-                    <textarea name="profil" onChange={this.handleChange}  id="profil" className="form-control" ></textarea>
+                    <textarea name="profil" onChange={this.handleChange}  id="profil" className="form-control" placeholder="Votre présentation" ></textarea>
                   </div>
                   <div className="form-group col-6 ">                
                     <TextField  name="nom_prenom" onChange={this.handleChange} className="col-12" value={this.state.coordonnees.nom_prenom}  label="Nom et Prénom" variant="outlined" />                              
@@ -61,7 +60,7 @@ handleChange = (e) => {
                   <div className="form-group col-6 ">
                     <TextField  name="poste" onChange={this.handleChange} className="col-12" value={this.state.coordonnees.poste} label="Poste occupé" variant="outlined" /> 
                   </div>
-                  <h4 className="col-lg-12">Contact :</h4>
+                  <h5 className="col-lg-12">Contact :</h5>
                   <div className="form-group col-6 ">
                       <TextField  name="telephone" onChange={this.handleChange} value={this.state.coordonnees.telephone} className="col-12" label="Telephone" variant="outlined" />
                   </div>
@@ -74,12 +73,9 @@ handleChange = (e) => {
                   <div className="form-group col-6 ">
                       <TextField  name="linkedin" onChange={this.handleChange} value={this.state.coordonnees.linkedin} className="col-12" label="LinkedIn" variant="outlined" />
                   </div>
-                  <div className="row col-12">
-                    <div className="form-group col-1" >
-                      <button className="btn btn-primary"> Retour </button>              
-                    </div>
-                    <div className="form-group col-1" >
-                      <button type="button" className="btn btn-primary" onClick={this.handleNext}> Suivant</button>            
+                  <div className="row col-12">              
+                    <div className="form-group col-2" >
+                      <button type="button" className="btn btn-success" onClick={this.handleNext}> Suivant</button>            
                     </div>
                   </div>
                 </form>

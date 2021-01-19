@@ -10,13 +10,15 @@ import Competences from './steps/Competences';
 import Coordonnees from './steps/Coordonnees';
 import Experiences from './steps/Experiences';
 import Formations from './steps/Formations';
+import Models from './steps/Models';
 
 
 function Router () 
 {
     return(   
             <Switch>
-                <Route exact  path='/' component={HomePage} />                    
+                <Route exact  path='/' component={HomePage} />
+                <Route path="/models" component={Models} />                    
                 <Route path="/makeCV" component={BuildingCv} />
                 <Route path="/formations" component={Formations} />
                 <Route path="/coordonnees" component={Coordonnees} />

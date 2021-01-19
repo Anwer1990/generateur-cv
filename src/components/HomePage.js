@@ -18,7 +18,7 @@ class HomePage extends Component
             <div className="jumbotron">
                 <div className="jumbotron-content">
                     <h2>Construirez votre curriculum vitae en quelque minutes</h2>
-                    <Link to="/Coordonnees" className="btn btn-success btn-lg">Créer un CV</Link>    
+                    <Link to="/models" className="btn btn-success btn-lg">Créer un CV</Link>    
                 </div>                
             </div>            
         </div>
