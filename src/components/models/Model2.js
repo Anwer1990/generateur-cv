@@ -32,7 +32,74 @@ import { connect } from 'react-redux';
                                 </ul>
                             </div>
                             <div className="bloc-competences-m2">
-
+                                <h3>COMPETENCES</h3>
+                                <ul className="competences-m2">
+                                    {this.props.competences.map((row,index)=>(
+                                    <li key={index} className="row"><span className="col-lg-6">{row.nom}</span> <span className="col-lg-6">
+                                        {(() => {
+                                            switch (row.selectedValue) {
+                                                case 'Debutant(e)':
+                                                    return (
+                                                        <div>
+                                                            <i className="fas fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                        </div>
+                                                    );
+                                                    break;
+                                                case 'Intermédiaire':
+                                                    return (
+                                                        <div>
+                                                            <i className="fas fa-star"></i>
+                                                            <i className="fas fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                        </div>
+                                                    );
+                                                    break;
+                                                case 'Bien':
+                                                    return (
+                                                        <div>
+                                                            <i className="fas fa-star"></i>
+                                                            <i className="fas fa-star"></i>
+                                                            <i className="fas fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                            <i className="far fa-star"></i>
+                                                        </div>
+                                                    );
+                                                    break;
+                                                case 'Trés bien':
+                                                return (
+                                                    <div>
+                                                        <i className="fas fa-star"></i>
+                                                        <i className="fas fa-star"></i>
+                                                        <i className="fas fa-star"></i>
+                                                        <i className="fas fa-star"></i>
+                                                        <i className="far fa-star"></i>
+                                                    </div>
+                                                );
+                                                break;
+                                                case 'Excellent':
+                                                return (
+                                                    <div>
+                                                        <i className="fas fa-star"></i>
+                                                        <i className="fas fa-star"></i>
+                                                        <i className="fas fa-star"></i>
+                                                        <i className="fas fa-star"></i>
+                                                        <i className="fas fa-star"></i>
+                                                    </div>
+                                                );
+                                                break;
+                                                default:
+                                                    break;
+                                            }
+                                        })()}
+                                        </span></li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
                         <div className="col-9 main-bloc-m2">

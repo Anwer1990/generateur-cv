@@ -33,7 +33,7 @@ class Apercu extends Component {
             <Stepper />
             <div className="container">
                 <Paper  className="paper" elevation={5}>                    
-                    {this.state.model ==="model1"?<Model1 />:<Model2 />}
+                    {this.state.model ==="model2"?<Model1 />:<Model2 />}
                 </Paper>
 
                     <button className="btn btn-success btn-downloadPdf" onClick={this.handleDownload}>Generer un PDF</button>
@@ -46,6 +46,6 @@ class Apercu extends Component {
 
 function mapStateToProps(state)
 {
-    return{coordonnees : state.coordonnees,formations:state.formations,experiences:state.experiences,competences:state.competences,model:state.model}
+    return{model:state.model}
 }
 export default connect(mapStateToProps,null)(Apercu)

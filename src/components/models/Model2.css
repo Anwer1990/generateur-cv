@@ -21,7 +21,7 @@
     font-size: 25px;
     color: #fff;
 }
-.coordonnees-m2
+.coordonnees-m2,.competences-m2
 {
     list-style: none;
     padding-left: 5px;
@@ -66,9 +66,10 @@
     color:#000;
     font-weight: 600;
 }
-.bloc-experiences-m2 h3,.bloc-formations-m2 h3
+.bloc-experiences-m2 h3,.bloc-formations-m2 h3,.bloc-competences-m2 h3
 {
     font-size: 1.5rem;
+    color:#fff;
 }
 .etablissement-m2,.periode-m2,.poste-occupe-m2
 {

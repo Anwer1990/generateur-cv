@@ -8,7 +8,9 @@ class Navbar extends Component
             <nav className="navbar">
                 <div className="container">
                     <span className="navbar-brand mb-0 h1">
-                        <img src="logo.png" alt='logo' />
+                        <a href="/">
+                            <img src="logo.png" alt='logo' />
+                        </a>
                     </span>
                     <ul className="social-links float-right">
                         <li><a href=""><i class="fab fa-facebook"></i></a></li>

@@ -19,9 +19,7 @@ function Router ()
 {
     return(   
             <Switch>
-                <Route exact  path='/' component={HomePage} />
-                <Route path="/model1" component={Model1} />
-                <Route path="/model2" component={Model2} />
+                <Route exact  path='/' component={HomePage} />                
                 <Route path="/models" component={Models} />                    
                 <Route path="/makeCV" component={BuildingCv} />
                 <Route path="/formations" component={Formations} />
