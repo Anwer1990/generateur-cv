@@ -1,0 +1,81 @@
+.left-bloc
+{
+    background-color:#0070c2;
+    padding: 20px;
+    
+}
+.avatar-m2
+{
+    margin: 0 auto;
+}
+.avatar-countainer-m2
+{
+    text-align: center;
+}
+.bloc-resume-m2
+{
+    margin: 30px 0;
+}
+.bloc-resume-m2 h3,.bloc-contact-m2 h3
+{
+    font-size: 25px;
+    color: #fff;
+}
+.coordonnees-m2
+{
+    list-style: none;
+    padding-left: 5px;
+    color:#fff;
+}
+.bloc-resume-m2 p 
+{
+    color:#fff
+}
+.nom-prenom-m2
+{
+    font-weight: 700;
+    font-size: 3.2rem;
+    color:#fff;
+    margin-bottom: 0;
+}
+.poste-recherche-m2
+{
+    color:#fff;
+    font-size: 1.2rem;
+}
+.nom-job-container-m2
+{
+    background-color: #bfbfbf;
+    margin-top: 60px;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+}
+.main-bloc-m2
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+.bloc-formations-m2,.bloc-experiences-m2
+{
+    padding-left: 25px;
+    margin-top: 40px;
+}
+.titre-formation-m2,.nom-entreprise-m2
+{
+    color:#000;
+    font-weight: 600;
+}
+.bloc-experiences-m2 h3,.bloc-formations-m2 h3
+{
+    font-size: 1.5rem;
+}
+.etablissement-m2,.periode-m2,.poste-occupe-m2
+{
+    color: #8e8787;
+    font-weight: 500;
+}
+.bloc-formations-m2 .formation
+{
+    margin-top: 25px;
+}
