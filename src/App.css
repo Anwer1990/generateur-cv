@@ -139,3 +139,7 @@ nav.navbar
     margin-top: -3px;
     cursor: pointer;
 }
+.btn-downloadPdf
+{
+  margin-top: 30px;
+}

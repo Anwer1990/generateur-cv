@@ -36,7 +36,7 @@ class Apercu extends Component {
                     {this.state.model ==="model1"?<Model1 />:<Model2 />}
                 </Paper>
 
-                    <button className="btn btn-success mt-10" onClick={this.handleDownload}>Generer un PDF</button>
+                    <button className="btn btn-success btn-downloadPdf" onClick={this.handleDownload}>Generer un PDF</button>
                 
             </div>
             </>
