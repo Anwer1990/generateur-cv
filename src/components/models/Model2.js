@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import Paper from '@material-ui/core/Paper';
 import './Model2.css';
 import { connect } from 'react-redux';
 
-export class Model2 extends Component {
+ class Model2 extends Component {
     render() {
-        const { nom_prenom,poste,date_naissance,adresse,email,linkedin,telephone,profil } = this.props.coordonnees
+        
+        
+        console.log("coordonnees",this.props.coordonnees)
         return (
-            <Paper  className="paper container" elevation={5}>
+           
                 <div  className="container">
                     <div className="row">
                         <div className="col-3 left-bloc">
@@ -17,17 +18,17 @@ export class Model2 extends Component {
                             <div className="bloc-resume-m2">
                                 <h3>A PROPOS DE MOI</h3>
                                 <p className="resume-m2">
-                                    {profil}
+                                    {this.props.coordonnees.profil}
                                 </p>
                             </div>
                             <div className="bloc-contact-m2">
                                 <h3>CONTACT</h3>
                                 <ul className="coordonnees-m2">
-                                    <li><i class="fas fa-map-marker-alt"></i> {adresse}</li>
-                                    <li><i class="fas fa-birthday-cake"></i> {date_naissance}</li>
-                                    <li><i class="fas fa-phone"></i> {telephone}</li>
-                                    <li><i class="fas fa-envelope"></i> {email}</li>
-                                    <li><i class="fab fa-linkedin"></i>{linkedin}</li>
+                                    <li><i class="fas fa-map-marker-alt"></i> {this.props.coordonnees.adresse}</li>
+                                    <li><i class="fas fa-birthday-cake"></i> {this.props.coordonnees.date_naissance}</li>
+                                    <li><i class="fas fa-phone"></i> {this.props.coordonnees.telephone}</li>
+                                    <li><i class="fas fa-envelope"></i> {this.props.coordonnees.email}</li>
+                                    <li><i class="fab fa-linkedin"></i>{this.props.coordonnees.linkedin}</li>
                                 </ul>
                             </div>
                             <div className="bloc-competences-m2">
@@ -37,10 +38,10 @@ export class Model2 extends Component {
                         <div className="col-9 main-bloc-m2">
                             <div className="nom-job-container-m2">
                                 <h1 className="nom-prenom-m2">
-                                   {nom_prenom}
+                                   {this.props.coordonnees.nom_prenom}
                                 </h1>
                                 <h4 className="poste-recherche-m2">
-                                    {poste}
+                                    {this.props.coordonnees.poste}
                                 </h4>
                             </div>
                             <div className="bloc-formations-m2">
@@ -76,7 +77,7 @@ export class Model2 extends Component {
                         </div>
                     </div>
                 </div>
-            </Paper>
+          
         )
     }
 }
