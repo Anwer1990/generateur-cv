@@ -54,44 +54,48 @@ handleAdd = (event) => {
         <div className="container ">
           <Stepper />
           <div className="main-content row">
-            <div className="col-9">
-              <form >
-                <div className="mid-container">            
-                {this.state.formations.map((row, index)=>{return(            
-                  <div className="row" key={`${row}-${index}`}>
-                    <div className="form-group col-3">              
-                      <TextField type="date" name="experiences" onChange={e => this.handleChange(index,e)} name="annee_promotion"  className="form-control " label="" />              
+            <div className="header-content col-12">
+              <h2 >Formation</h2>
+              <h5 >Détaillez vos formations</h5>
+            </div>
+              <div className="col-9">
+                <form >
+                  <div className="mid-container">            
+                  {this.state.formations.map((row, index)=>{return(            
+                    <div className="row" key={`${row}-${index}`}>
+                      <div className="form-group col-3">              
+                        <TextField type="date" name="experiences" onChange={e => this.handleChange(index,e)} name="annee_promotion"  className="form-control " label="" />              
+                      </div>
+                      <div className="form-group col-4">
+                        <TextField type="text" name="experiences" onChange={e => this.handleChange(index,e)} name="etablissement" className="form-control " label="Etablissement" variant="outlined" />    
+                      </div>
+                      <div className="form-group col-4">
+                        <TextField type="text" name="experiences" onChange={e => this.handleChange(index,e)} name="titre" className="form-control " label="Diplôme" variant="outlined" />    
+                      </div>
+                      <div className="form-group">
+                        <button type="button" onClick={() => this.handleRemove(index)}  className="btn btn-danger">-</button>
+                      </div>            
                     </div>
-                    <div className="form-group col-4">
-                      <TextField type="text" name="experiences" onChange={e => this.handleChange(index,e)} name="etablissement" className="form-control " label="Etablissement" variant="outlined" />    
-                    </div>
-                    <div className="form-group col-4">
-                      <TextField type="text" name="experiences" onChange={e => this.handleChange(index,e)} name="titre" className="form-control " label="Diplôme" variant="outlined" />    
-                    </div>
-                    <div className="form-group">
-                      <button type="button" onClick={() => this.handleRemove(index)}  className="btn btn-danger">-</button>
-                    </div>            
-                  </div>
-                )})} 
-                  
-                <button type="button" className="btn btn-success" onClick={() => this.handleAdd()}>+</button>
+                  )})} 
+                    
+                  <button type="button" className="btn btn-success" onClick={() => this.handleAdd()}>+</button>
 
-                </div>
-                <div className="col-3">
-                  <div className="row">
-                    <div className="form-group col-6" >
-                      <button type="button" onClick={this.handleBack} className="btn btn-primary"> Retour </button>              
-                    </div>
-                    <div className="form-group col-6" >
-                      <button type="button" className="btn btn-primary" onClick={this.handleNext}> Suivant</button>            
-                    </div>
                   </div>
-                  </div>
-              </form>
-            </div>
-            <div className="col-3">
-                    <img className="img-fluid" src="images/etape2.png" />
-            </div>
+                  <div className="col-3">
+                    <div className="row">
+                      <div className="form-group col-6" >
+                        <button type="button" onClick={this.handleBack} className="btn btn-primary"> Retour </button>              
+                      </div>
+                      <div className="form-group col-6" >
+                        <button type="button" className="btn btn-primary" onClick={this.handleNext}> Suivant</button>            
+                      </div>
+                    </div>
+                    </div>
+                </form>
+              </div>
+              <div className="col-3">
+                      <img className="img-fluid" src="images/etape2.png" />
+              </div>            
           </div>
       </div>
     );

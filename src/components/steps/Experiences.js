@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Stepper from '../Stepper';
 import { connect } from 'react-redux';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
  class Experiences extends Component {
      state ={
-         experiences : [{poste:"",employeur:"",date_debut:"",date_fin:""}],
+         experiences : [{poste:"",employeur:"",date_debut:"",date_fin:"",en_poste:false}],
         activeStep:3
      }
      handleNext = () => 
@@ -34,6 +36,13 @@ import { connect } from 'react-redux';
         console.log(values)
         this.setState({experiences:values});
       }
+      handleChangeCheckbox = (i,event) => 
+      {
+        const values = [...this.state.experiences];
+        values[i].[event.target.name] = true
+        this.setState({experiences:values})
+        
+      }
      handleAdd = () => {
         const values = [...this.state.experiences];
         console.log("values +",values);
@@ -48,10 +57,15 @@ import { connect } from 'react-redux';
         console.log("values -",values);
       }
     render() {
+      console.log("experiences",this.state.experiences)
         return (
             <div className="container">
                 <Stepper />
                 <div className="main-content row">
+                  <div className="header-content col-12">
+                    <h2 >Expérience</h2>
+                    <h5 >Détaillez votre expérience professionnelle</h5>
+                  </div>
                   <div className="col-9">
                     <form >
                         <div className="mid-container">            
@@ -64,13 +78,23 @@ import { connect } from 'react-redux';
                             <div className="form-group col-lg-12">
                                 <TextField type="text" name="employeur" onChange={e => this.handleChange(index,e)}  className="form-control " label="Employeur" variant="outlined" />    
                             </div>
+                            <div className="col-lg-10">
+                              <div className="form-group">
+                              <FormControlLabel
+                                  control={<Checkbox checked={this.state.experiences.en_poste} onChange={e => this.handleChangeCheckbox(index,e)} name="en_poste" />}
+                                  label="En Poste"
+                                />
+                              </div>
+                            </div>
                             <div className="col-lg-10 row">
                                 <div className="form-group col-lg-6">
                                     <TextField type="date" name="date_debut" className="form-control " onChange={e => this.handleChange(index,e)} />
                                 </div>
+                                {false===false?
                                 <div className="form-group col-lg-6">
                                 <TextField type="date" name="date_fin" format="dd/MM/yyyy" className="form-control " onChange={e => this.handleChange(index,e)} />
                                 </div>
+                                :""}
                             </div>
                             <div className="form-group col-lg-2">
                                 <button type="button" onClick={() => this.handleRemove(index)}  className="btn btn-danger">-</button>
