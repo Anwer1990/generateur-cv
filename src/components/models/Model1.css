@@ -1,4 +1,4 @@
-.img-container
+.img-container-m1
 {
     text-align: center;
 }
@@ -6,19 +6,19 @@
 {
     border-radius: 7.25rem;
 }
-.nom-prenom
+.nom-prenom-m1
 {
     margin-top: 10px;
     font-weight: 700;
     font-size: 3.2rem;
 }
-.poste-recherche
+.poste-recherche-m1
 {
     color:#17b34a;
     font-style: italic;
     font-size: 1.5rem;
 }
-.name-job
+.name-job-m1
 {
     padding-left: 22px;
 }
@@ -35,11 +35,11 @@
     color:#17b34a;
     font-weight: 700;
 }
-.competences
+.competences-m1
 {
     list-style: none;  
 }
-.competences li 
+.competences-m1 li 
 {
     margin: auto;
 }
@@ -47,13 +47,13 @@
 {
     background-color:#17b34a;
 }
-.periode
+.periode-m1
 {
     color:#17b34a;
     text-align: right;
     font-weight: 600;
 }
-.titre-formation
+.titre-formation-m1
 {
     font-weight: 700;
 }

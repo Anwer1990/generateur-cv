@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Paper from '@material-ui/core/Paper';
+import  './Model1.css';
 
 
 export class Model1 extends Component {
@@ -9,7 +10,7 @@ export class Model1 extends Component {
             <div className="container">
                 <div className="bloc-top">
                     <div className="row">
-                        <div className="col-3 img-container">
+                        <div className="col-3 img-container-m1">
                         <img src="img_avatar.png" className="img-rounded" width="150" alt="avatar" />
                         </div>
                         <div className="col-9">
@@ -21,10 +22,10 @@ export class Model1 extends Component {
                                 <div className="col-4">Linkedin</div>
                             </div>
                             <div className="name-job col-12">
-                                <h1 className="nom-prenom">
+                                <h1 className="nom-prenom-m1">
                                     Prénom Nom
                                 </h1>
-                                <h4 className="poste-recherche">
+                                <h4 className="poste-recherche-m1">
                                     Nom du job recherché
                                 </h4>
                             </div>
@@ -43,8 +44,8 @@ export class Model1 extends Component {
                             <div className="col-3 title-bloc-mid">FORMATION</div>
                             <div className="col-9">
                                 <div className="row">
-                                    <div className="col-8 titre-formation">DIPLOME XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
-                                    <div className="col-4 periode">20XX-20XX</div>
+                                    <div className="col-8 titre-formation-m1">DIPLOME XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+                                    <div className="col-4 periode-m1">20XX-20XX</div>
                                 </div>
                                 <div className="col-12">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</div>
                             </div>
@@ -55,8 +56,8 @@ export class Model1 extends Component {
                             <div className="col-3 title-bloc-mid">EXPERIENCE</div>
                             <div className="col-9">
                                 <div className="row">
-                                    <div className="col-8 titre-formation">Développeur web</div>
-                                    <div className="col-4 periode">Sept 20XX- Jan 20XX</div>
+                                    <div className="col-8 titre-formation-m1">Développeur web</div>
+                                    <div className="col-4 periode-m1">Sept 20XX- Jan 20XX</div>
                                 </div>
                                 <div className="col-12">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</div>
                             </div>
