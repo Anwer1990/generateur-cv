@@ -112,14 +112,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
                         <button type="button" className="btn btn-success" onClick={() => this.handleAdd()}>+</button>
 
                         </div>
-                        <div className=" col-3">
-                          <div className="row">
-                            <div className="form-group col-6" >
-                                <button type="button" onClick={this.handleBack} className="btn btn-primary"> Retour </button>              
-                            </div>
-                            <div className="form-group col-6" >
-                                <button type="button" className="btn btn-primary" onClick={this.handleNext}> Suivant</button>            
-                            </div>                            
+                        <div className="row col-12">              
+                          <div className="form-group col-2" >
+                            <button type="button" className="btn btn-success" onClick={this.handleNext}> Suivant</button>            
                           </div>
                         </div>
                     </form>
