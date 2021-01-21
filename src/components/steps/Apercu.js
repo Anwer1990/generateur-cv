@@ -18,6 +18,7 @@ class Apercu extends Component {
    
     handleDownload = () =>
     {
+        document.title='curriculum vitae'
         window.print()
     }
   

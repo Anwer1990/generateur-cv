@@ -32,7 +32,13 @@ handleNext = () =>
 
 handleChange = (e) => {
   let values = {...this.state.coordonnees}
-  values.[e.target.name] = e.target.value   
+  values.[e.target.name] = e.target.value
+  if(e.target.name==="linkedin")
+  {      
+    var linkedin = e.target.value.replace('https://linkedin.com/','');
+    console.log("linkedin",linkedin)
+    values.[e.target.name] = linkedin;
+  }   
    this.setState({coordonnees:values});
   }
 
