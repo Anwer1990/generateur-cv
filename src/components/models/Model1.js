@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
                         <img src="img_avatar.png" className="img-rounded" width="150" alt="avatar" />
                         </div>
                         <div className="col-9">
-                            <div className="row">
+                            <div className="row coordonnees">
                                 <div className="col-4"><i class="fas fa-map-marker-alt"></i> {this.props.coordonnees.adresse}</div>
                                 <div className="col-4"><i class="fas fa-birthday-cake"></i> {this.props.coordonnees.date_naissance}</div>
                                 <div className="col-4"><i class="fas fa-phone"></i> {this.props.coordonnees.telephone}</div>

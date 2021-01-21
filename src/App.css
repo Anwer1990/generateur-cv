@@ -5,7 +5,7 @@
 nav.navbar
 {
   margin-bottom: 0;
-  background:#222;
+  background:#393e46;
   color: #f2f2f2;
   max-height: 70px;
 }
@@ -20,13 +20,18 @@ nav.navbar
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20%;
-  height: 80%;
+  height: 100%;
   content: "";
   position: absolute;
   left: 0;
   top: 69px;
   width: 100%;
   filter: brightness(0.4); 
+}
+.jumbotron
+{
+  height: 100vh;
+    margin-bottom: 0;
 }
 .jumbotron-content
 {
@@ -120,6 +125,14 @@ nav.navbar
 {
   border:1px solid #000;
 }
+#cv-body
+{
+  margin-bottom: 30px;
+}
+#cv-body .paper
+{
+  margin-top: 100px;
+}
 .mid-container{margin-bottom: 20px;}
 .main-content
 {
@@ -157,4 +170,34 @@ nav.navbar
 .btn-downloadPdf
 {
   margin-top: 30px;
+}
+.MuiCheckbox-colorSecondary.Mui-checked
+{
+  color:green !important;
+}
+#footer
+{
+  background-color: #393e46;
+  
+  bottom: 0;
+  height: 12.7vh;
+  padding: 50px;
+  text-align: center;
+}
+.copyright-bloc
+{
+  color:#fff;
+}
+@media print {
+  nav {display:none;}
+  .btn-downloadPdf{display: none;}
+  .contStepper{display: none;}
+  #footer{display:none;}
+  .progress-bar-m1
+  {    
+      background-color:#17b34a !important;
+      -webkit-print-color-adjust:exact;
+  }
+  .left-bloc,.nom-job-container-m2,.etablissement-m2, .periode-m2, .poste-occupe-m2,.titre-formation-m2, .nom-entreprise-m2
+  {-webkit-print-color-adjust:exact;}
 }

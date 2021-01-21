@@ -18,10 +18,7 @@ class Apercu extends Component {
    
     handleDownload = () =>
     {
-        const printableElements = document.getElementById('doc_pdf').innerHTML;
-        
-        document.body.innerHTML = printableElements;
-        window.print();
+        window.print()
     }
   
     render() {
@@ -31,9 +28,9 @@ class Apercu extends Component {
         return (
             <>
             <Stepper />
-            <div className="container">
+            <div id="cv-body" className="container">
                 <Paper  className="paper" elevation={5}>                    
-                    {this.state.model ==="model2"?<Model1 />:<Model2 />}
+                    {this.state.model ==="model1"?<Model1 />:<Model2 />}
                 </Paper>
 
                     <button className="btn btn-success btn-downloadPdf" onClick={this.handleDownload}>Generer un PDF</button>

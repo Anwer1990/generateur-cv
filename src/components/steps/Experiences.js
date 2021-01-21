@@ -38,15 +38,20 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
       }
       handleChangeCheckbox = (i,event) => 
       {
+        console.log("checked",event.target.checked);
         const values = [...this.state.experiences];
-        values[i].[event.target.name] = true
-        this.setState({experiences:values})
+        values[i].en_poste===false?values[i].[event.target.name] = event.target.checked: values[i].[event.target.name] = event.target.checked;        
+        let toDay = new Date();
+        let fullDate = toDay.toLocaleDateString();
+        values[i].en_poste===true?values[i].date_fin = fullDate :values[i].date_fin = "";
+        console.log("today",values);
+         this.setState({experiences:values})
         
       }
      handleAdd = () => {
         const values = [...this.state.experiences];
         console.log("values +",values);
-        values.push({poste:"",employeur:"",date_debut:"",date_fin:""});
+        values.push({poste:"",employeur:"",date_debut:"",date_fin:"",en_poste:false});
         this.setState({experiences:values});
       }
     
@@ -81,18 +86,20 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
                             <div className="col-lg-10">
                               <div className="form-group">
                               <FormControlLabel
-                                  control={<Checkbox checked={this.state.experiences.en_poste} onChange={e => this.handleChangeCheckbox(index,e)} name="en_poste" />}
+                                  control={<Checkbox checked={this.state.experiences[index].en_poste} onChange={e => this.handleChangeCheckbox(index,e)} name="en_poste" />}
                                   label="En Poste"
                                 />
                               </div>
                             </div>
                             <div className="col-lg-10 row">
                                 <div className="form-group col-lg-6">
-                                    <TextField type="date" name="date_debut" className="form-control " onChange={e => this.handleChange(index,e)} />
+                                    <label>Date de debut</label>
+                                    <TextField type="date" name="date_debut" format="DD-MM-YYYY"   className="form-control " onChange={e => this.handleChange(index,e)} />
                                 </div>
-                                {false===false?
+                                {this.state.experiences[index].en_poste===false?
                                 <div className="form-group col-lg-6">
-                                <TextField type="date" name="date_fin" format="dd/MM/yyyy" className="form-control " onChange={e => this.handleChange(index,e)} />
+                                  <label>Date de fin</label>
+                                <TextField type="date" name="date_fin" format="DD-MM-YYYY" className="form-control " onChange={e => this.handleChange(index,e)} />
                                 </div>
                                 :""}
                             </div>
