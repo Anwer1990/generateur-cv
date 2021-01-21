@@ -4,13 +4,14 @@ import TextField from '@material-ui/core/TextField';
 // import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import Stepper from '../Stepper';
+import axios from 'axios';
 
 
 
 class  Coordonnees extends Component
 {
   state = {
-    coordonnees:{profil:"",nom_prenom:"",poste:"",date_naissance:"",telephone:"",adresse:"",email:"",linkedin:""},
+    coordonnees:{avatar:null,profil:"",nom_prenom:"",poste:"",date_naissance:"",telephone:"",adresse:"",email:"",linkedin:""},
     activeStep:1
   }
   componentDidMount()
@@ -26,8 +27,30 @@ handleNext = () =>
     console.log("activeStep",this.state.activeStep)
     this.props.getActiveStep(this.state.activeStep);
     this.props.addCoordonnees(this.state.coordonnees);
+    this.fileUpload();
   }
   this.props.history.push("/formations");
+}
+fileSelect = event => {
+  this.setState({avatar: event.target.files[0]})
+  console.log(event.target.files[0])
+}
+fileUpload = () => 
+{
+  const fd = new FormData();
+  fd.append('image', this.state.avatar);
+  const config = {     
+    headers: { 'content-type': 'multipart/form-data', 'Content-Type': 'application/json',"X-Requested-With": "XMLHttpRequest",
+    'Accept': 'application/json' }
+    }
+  axios.post('https://cors-anywhere.herokuapp.com/http://localhost/upload.php', fd,config
+
+  ).then(res=>
+  {
+  console.log(res);
+  }
+  );
+  
 }
 
 handleChange = (e) => {
@@ -51,7 +74,7 @@ handleChange = (e) => {
               <div className="col-9">
                 <form className="col-lg-12 row"  >
                   <div className="form-group col-6 ">
-                    <input className="form-control" type="file" />
+                    <input className="form-control" onChange = {this.fileSelect} type="file" />
                   </div>
                   <div className="form-group col-12">
                     <textarea name="profil" onChange={this.handleChange}  id="profil" className="form-control" placeholder="Votre présentation" ></textarea>
