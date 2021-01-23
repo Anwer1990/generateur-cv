@@ -39,19 +39,21 @@ fileSelect = event => {
 fileUpload = () => 
 {  
   var formdata = new FormData();
-  formdata.append('image', this.state.avatar,this.state.avatar.name);
+  formdata.append('image', this.state.avatar);
+    formdata.append('name', this.state.avatar.name);
   const config = {     
-    headers: { 'content-type': 'multipart/form-data', 'Content-Type': 'application/json',"X-Requested-With": "XMLHttpRequest",'Accept': 'application/json' }
+    headers: { 'Content-Type': 'multipart/form-data',"X-Requested-With": "XMLHttpRequest",'Accept': 'application/json' }
     }
-  axios.post('http://127.0.0.1:8000/api/upload_img',config,formdata).then(res=>
-    {
-      console.log(res.data);
-    }
-  ).catch(err=>
-    {
-      console.error(err)
-    }
-    );
+    
+    axios.post('http://127.0.0.1:8000/api/upload_img',config,formdata).then(res=>
+      {
+        console.log(res.data);
+      }
+        ).catch(err=>
+          {
+            console.error(err)
+          }
+        );
   
   
 }
@@ -75,7 +77,7 @@ handleChange = (e) => {
           <Stepper />          
           <div className="main-content row">              
               <div className="col-9">
-                <form className="col-lg-12 row"  >
+                <form className="col-lg-12 row"  enctype="multipart/form-data">
                   <div className="form-group col-6 ">
                     <input className="form-control" onChange = {this.fileSelect} name="image" type="file" />
                   </div>
