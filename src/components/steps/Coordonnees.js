@@ -11,7 +11,8 @@ import axios from 'axios';
 class  Coordonnees extends Component
 {
   state = {
-    coordonnees:{avatar:null,profil:"",nom_prenom:"",poste:"",date_naissance:"",telephone:"",adresse:"",email:"",linkedin:""},
+    avatar:null,
+    coordonnees:{profil:"",nom_prenom:"",poste:"",date_naissance:"",telephone:"",adresse:"",email:"",linkedin:""},
     activeStep:1
   }
   componentDidMount()
@@ -33,23 +34,25 @@ handleNext = () =>
 }
 fileSelect = event => {
   this.setState({avatar: event.target.files[0]})
-  console.log(event.target.files[0])
+  console.log("target",event.target.files[0])
 }
 fileUpload = () => 
-{
-  const fd = new FormData();
-  fd.append('image', this.state.avatar);
+{  
+  var formdata = new FormData();
+  formdata.append('image', this.state.avatar,this.state.avatar.name);
   const config = {     
-    headers: { 'content-type': 'multipart/form-data', 'Content-Type': 'application/json',"X-Requested-With": "XMLHttpRequest",
-    'Accept': 'application/json' }
+    headers: { 'content-type': 'multipart/form-data', 'Content-Type': 'application/json',"X-Requested-With": "XMLHttpRequest",'Accept': 'application/json' }
     }
-  axios.post('https://cors-anywhere.herokuapp.com/http://localhost/upload.php', fd,config
-
-  ).then(res=>
-  {
-  console.log(res);
-  }
-  );
+  axios.post('http://127.0.0.1:8000/api/upload_img',config,formdata).then(res=>
+    {
+      console.log(res.data);
+    }
+  ).catch(err=>
+    {
+      console.error(err)
+    }
+    );
+  
   
 }
 
@@ -74,7 +77,7 @@ handleChange = (e) => {
               <div className="col-9">
                 <form className="col-lg-12 row"  >
                   <div className="form-group col-6 ">
-                    <input className="form-control" onChange = {this.fileSelect} type="file" />
+                    <input className="form-control" onChange = {this.fileSelect} name="image" type="file" />
                   </div>
                   <div className="form-group col-12">
                     <textarea name="profil" onChange={this.handleChange}  id="profil" className="form-control" placeholder="Votre présentation" ></textarea>
