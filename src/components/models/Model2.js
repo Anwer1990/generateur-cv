@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
                     <div className="row">
                         <div className="col-3 left-bloc">
                             <div className="avatar-countainer-m2">
-                                <img src="img_avatar.png" width="150" className="avatar-m2" alt="avatar" />
+                                <img src={this.props.coordonnees.avatar} width="200" className="avatar-m2" alt="avatar" />
                             </div>
                             <div className="bloc-resume-m2">
                                 <h3>A PROPOS DE MOI</h3>

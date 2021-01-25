@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
                 <div className="bloc-top">
                     <div className="row">
                         <div className="col-3 img-container-m1">
-                        <img src="img_avatar.png" className="img-rounded" width="150" alt="avatar" />
+                        <img src={this.props.coordonnees.avatar} className="img-rounded" width="150" alt="avatar" />
                         </div>
                         <div className="col-9">
                             <div className="row coordonnees">

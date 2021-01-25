@@ -112,6 +112,16 @@ nav.navbar
   list-style: none;
   text-align: left;
 }
+/** avatar css **/
+.avatarImage {
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border:1px solid rgb(126, 124, 124);
+  margin: 10px;
+}
+/** **/
 .add-btn-container{
   margin-top: 20px;
   margin-bottom: 20px;

@@ -11,9 +11,9 @@ import axios from 'axios';
 class  Coordonnees extends Component
 {
   state = {
-    avatar:null,
+    
     fileUploaded:null,
-    coordonnees:{profil:"",nom_prenom:"",poste:"",date_naissance:"",telephone:"",adresse:"",email:"",linkedin:""},
+    coordonnees:{avatar:null,profil:"",nom_prenom:"",poste:"",date_naissance:"",telephone:"",adresse:"",email:"",linkedin:""},
     activeStep:1
   }
   componentDidMount()
@@ -46,7 +46,10 @@ fileUpload = (event) =>
     }    
     axios.post('http://127.0.0.1:8000/api/upload_img',formdata,config).then(res=>
       {
-        this.setState({avatar:res.data})
+        let avatar = "avatar";
+        let values = {...this.state.coordonnees};
+        values.[avatar] = res.data;
+        this.setState({coordonnees:values});
       }
         ).catch(err=>
           {
@@ -68,6 +71,7 @@ handleChange = (e) => {
 
   render()
   {
+    console.log("avatar",this.state.coordonnees.avatar)
     return (
       <div className="container">
           <Stepper />          
@@ -76,6 +80,7 @@ handleChange = (e) => {
                 <form className="col-lg-12 row"  enctype="multipart/form-data">
                   <div className="form-group col-6 ">
                     <input className="form-control" onChange = {this.fileSelect} name="image" type="file" />
+                    <img src={this.state.coordonnees.avatar} className="avatarImage" /><br/>
                     <button className="btn btn-primary" onClick={this.fileUpload}>valider</button>
                   </div>
                   <div className="form-group col-12">
