@@ -12,6 +12,7 @@ class  Coordonnees extends Component
 {
   state = {
     avatar:null,
+    fileUploaded:null,
     coordonnees:{profil:"",nom_prenom:"",poste:"",date_naissance:"",telephone:"",adresse:"",email:"",linkedin:""},
     activeStep:1
   }
@@ -25,37 +26,33 @@ handleNext = () =>
 {
   if(this.state.activeStep!=4){
     this.setState({activeStep:this.state.activeStep ++})
-    console.log("activeStep",this.state.activeStep)
     this.props.getActiveStep(this.state.activeStep);
     this.props.addCoordonnees(this.state.coordonnees);
-    this.fileUpload();
+   
   }
   this.props.history.push("/formations");
 }
 fileSelect = event => {
-  this.setState({avatar: event.target.files[0]})
-  console.log("target",event.target.files[0])
+  this.setState({fileUploaded: event.target.files[0]})
 }
-fileUpload = () => 
+fileUpload = (event) => 
 {  
+  event.preventDefault()
   var formdata = new FormData();
-  formdata.append('image', this.state.avatar);
-    formdata.append('name', this.state.avatar.name);
+  formdata.append('image', this.state.fileUploaded);
   const config = {     
-    headers: { 'Content-Type': 'multipart/form-data',"X-Requested-With": "XMLHttpRequest",'Accept': 'application/json' }
-    }
-    
-    axios.post('http://127.0.0.1:8000/api/upload_img',config,formdata).then(res=>
+    headers: { 'content-type': 'multipart/form-data', 'Content-Type': 'application/json',"X-Requested-With": "XMLHttpRequest",
+                'Accept': 'application/json' }
+    }    
+    axios.post('http://127.0.0.1:8000/api/upload_img',formdata,config).then(res=>
       {
-        console.log(res.data);
+        this.setState({avatar:res.data})
       }
         ).catch(err=>
           {
             console.error(err)
           }
         );
-  
-  
 }
 
 handleChange = (e) => {
@@ -64,7 +61,6 @@ handleChange = (e) => {
   if(e.target.name==="linkedin")
   {      
     var linkedin = e.target.value.replace('https://linkedin.com/','');
-    console.log("linkedin",linkedin)
     values.[e.target.name] = linkedin;
   }   
    this.setState({coordonnees:values});
@@ -80,6 +76,7 @@ handleChange = (e) => {
                 <form className="col-lg-12 row"  enctype="multipart/form-data">
                   <div className="form-group col-6 ">
                     <input className="form-control" onChange = {this.fileSelect} name="image" type="file" />
+                    <button className="btn btn-primary" onClick={this.fileUpload}>valider</button>
                   </div>
                   <div className="form-group col-12">
                     <textarea name="profil" onChange={this.handleChange}  id="profil" className="form-control" placeholder="Votre présentation" ></textarea>
